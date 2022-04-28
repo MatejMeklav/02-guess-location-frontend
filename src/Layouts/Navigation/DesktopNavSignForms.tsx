@@ -3,6 +3,8 @@ import GeotaggerLogo from '../GeotaggerLogo'
 
 export default function DesktopNavSignForms() {
   return (
-    <GeotaggerLogo></GeotaggerLogo>
+    <div className='desktop-nav-sign-forms'>
+      <GeotaggerLogo></GeotaggerLogo>
+    </div>
   )
 }
