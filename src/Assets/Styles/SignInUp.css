@@ -110,8 +110,7 @@
 
 }
 
-.sign-up-form-container .sign-up-form-btn {
-
+.green-btn {
     min-width: 100%;
     padding: 2.5% 0px;
     margin: 8px 0px;
@@ -177,7 +176,59 @@
     }
 
     .Mobile-nav-logged-out{
-        max-width: 99%;
+        max-width: 100%;
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
     }
-}
 
+    .Mobile-nav-logged-out img {
+        max-width: 140px;
+        margin-top: 10%;
+        margin-bottom: 4%;
+        margin-left: 8%;
+    }
+
+    .Mobile-nav-logged-out .toggle-menu {
+        margin-top: 10%;
+        margin-right:7%;
+    
+    }
+
+    .Mobile-nav-logged-out .toggle-menu .svg-outside {
+        margin-top: 10%;
+    
+    }
+
+    .links-inside {
+        max-width: 81%;
+        margin: 0 auto;
+        
+    }
+
+    .links-inside .link-item-arrow .arrow-open {
+        max-height: 15px;
+        margin-top: 20px;
+        margin-right: 10px;
+    }
+
+    .links-inside .link-item-arrow {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10%;
+        max-height: 60px;
+        margin-bottom:12%;
+    }
+
+    .links-inside .link-item-arrow h5{
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 28px;
+    	color: #233D4D;
+        margin-top: 20px;
+    }
+
+
+}

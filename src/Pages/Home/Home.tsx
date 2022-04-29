@@ -10,7 +10,7 @@ import MobileNavLoggedOut from "../../Layouts/Navigation/MobileNavLoggedOut";
 
 export default function Home() {
   return (
-    <>
+    <div className="home-page">
       <DesktopNavLoggedIn></DesktopNavLoggedIn>
       <DesktopNavLoggedOut></DesktopNavLoggedOut>
       <MobileNavLoggedIn></MobileNavLoggedIn>
@@ -19,6 +19,6 @@ export default function Home() {
       <HomeLoggedOut></HomeLoggedOut>
       <FooterDesktop></FooterDesktop>
       <FooterMobile></FooterMobile>
-    </>
+    </div>
   )
 }

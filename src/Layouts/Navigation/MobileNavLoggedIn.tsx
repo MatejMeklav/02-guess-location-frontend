@@ -1,8 +1,10 @@
 import React from 'react'
-import MobileLinksLoggedIn from './Links/MobileLinksLoggedIn'
+import GeotaggerLogo from '../GeotaggerLogo'
 
 export default function MobileNavLoggedIn() {
   return (
-    <MobileLinksLoggedIn></MobileLinksLoggedIn>
+    <div className='mobile-nav-logged-in'>
+      <GeotaggerLogo></GeotaggerLogo>
+    </div>
   )
 }

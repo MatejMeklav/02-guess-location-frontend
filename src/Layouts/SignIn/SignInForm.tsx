@@ -1,8 +1,30 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom'
+import { url } from '../../Config/variables';
+import ButtonGreen from '../ButtonGreen'
+import axios from 'axios';
+
 export default function SignInForm() {
+
+  const[email, setEmail] = useState("");
+  const[password, setPasword] = useState("");
   const handleSubmit = (event: { preventDefault: () => void; }) => {
     console.log("submited");
-    console.log(document.forms[0])
+    var {email, password} =document.forms[0];
+    console.log(email.value);
+    axios
+      .post(url + 'signup', {
+
+        email: email.value,
+        password: password.value,
+      })
+      .then(response => { 
+        console.log(response.data);
+        localStorage.setItem("key", response.data.key)
+      })
+      .catch(error => {
+          console.log(error.response)
+      });
     event.preventDefault();
 }
 return (
@@ -21,7 +43,7 @@ return (
         <label><span>Password</span></label>
         <input className="sign-up-form-input" type="password" name="password" />
       </div>
-      <button className="sign-up-form-btn">SIGN IN</button>
+      <ButtonGreen page = {true}></ButtonGreen>
    </form>
    <nav className='lower-part'>
          <p>Do you want to create an account?</p>

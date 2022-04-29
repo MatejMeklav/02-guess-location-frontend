@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import GoogleMapsBg from '../GoogleMapsBg'
+import ButtonGreen from '../ButtonGreen';
+
 
 export default function SignUpForm() {
 
@@ -42,7 +43,7 @@ export default function SignUpForm() {
           <input className="sign-up-form-input" type="password" name="confirmPassword" />
           <img src={require('../Images/visibleEye.png')} alt='eye' ></img>
         </div>
-        <button className="sign-up-form-btn">SIGN UP</button>
+        <ButtonGreen page = {false}></ButtonGreen>
      </form>
      <nav className='lower-part'>
            <p>Already have an account?</p>
