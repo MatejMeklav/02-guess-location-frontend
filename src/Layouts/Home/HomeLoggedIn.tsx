@@ -2,6 +2,6 @@ import React from 'react'
 
 export default function HomeLoggedIn() {
   return (
-    <div>HomeLoggedIn</div>
+    <div className='home-logged-in'>HomeLoggedIn</div>
   )
 }

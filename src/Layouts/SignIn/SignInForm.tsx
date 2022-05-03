@@ -1,37 +1,51 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom'
 import { url } from '../../Config/variables';
 import ButtonGreen from '../ButtonGreen'
 import axios from 'axios';
-
+import { useNavigate } from "react-router-dom";
 export default function SignInForm() {
 
-  const[email, setEmail] = useState("");
-  const[password, setPasword] = useState("");
+  const [loginRes, setLoginRes] = useState("");
+  const navigate = useNavigate();
   const handleSubmit = (event: { preventDefault: () => void; }) => {
     console.log("submited");
     var {email, password} =document.forms[0];
     console.log(email.value);
     axios
-      .post(url + 'signup', {
+      .post(url + 'signin', {
 
         email: email.value,
         password: password.value,
       })
       .then(response => { 
-        console.log(response.data);
+        setLoginRes("Success");
         localStorage.setItem("key", response.data.key)
       })
       .catch(error => {
           console.log(error.response)
+          if(error.response.status === 401){
+            if(error.response.data.message === 'Unauthorized'){
+              setLoginRes('Check your input!');
+            }else {
+              setLoginRes('Wrong email or password!');
+            }
+          }
       });
     event.preventDefault();
 }
+
+useEffect(() => {
+  if(loginRes === 'Success'){
+    navigate('/');
+  }
+},[loginRes]);
 return (
   <div id='login-form' className='sign-up-form-container'>
     <div className='upper-container'>
       <h3>Sign in</h3>
       <p>Welcome back to Geotagger. We are glad that you are back.</p>
+      <p>{loginRes}</p>
     </div>
     <div className="form">
    <form onSubmit={handleSubmit}>
@@ -56,3 +70,5 @@ return (
   </div>
 )
 }
+
+

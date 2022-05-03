@@ -1,6 +1,7 @@
 import React from 'react'
 import GeotaggerLogo from '../GeotaggerLogo'
 import DesktopLinksLoggedOut from './Links/DesktopLinksLoggedOut'
+import '../../Assets/Styles/SignInUp.css';
 
 export default function DesktopNavLoggedOut() {
   return (

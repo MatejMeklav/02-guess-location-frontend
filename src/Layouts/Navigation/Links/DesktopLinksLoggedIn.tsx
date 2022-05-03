@@ -2,6 +2,12 @@ import React from 'react'
 
 export default function DesktopLinksLoggedIn() {
   return (
-    <div>DesktopLinksLoggedIn</div>
+    <>
+    <ul>
+      <li>Home</li>
+      <li>Profile settings</li>
+      <li>Logout</li>
+    </ul>
+    </>
   )
 }

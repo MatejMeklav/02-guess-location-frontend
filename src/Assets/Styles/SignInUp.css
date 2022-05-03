@@ -20,7 +20,8 @@
     margin-bottom: 1%;
 }
 
-.sign-up-form-container .upper-container p
+.sign-up-form-container .upper-container p,
+.confirmation-email
 {
     font-family: 'Roboto';
     font-style: normal;
@@ -189,13 +190,36 @@
         margin-left: 8%;
     }
 
-    .Mobile-nav-logged-out .toggle-menu {
+    .Mobile-nav-logged-in .svg-outside,
+    .Mobile-nav-logged-in a {
+        margin-top: 9%;
+        margin-left: 5%;
+    }
+
+    .Mobile-nav-logged-in img {
+        max-width: 140px;
         margin-top: 10%;
+        margin-bottom: 4%;
+    }
+
+    .Mobile-nav-logged-out .toggle-menu,
+    .Mobile-nav-logged-in .toggle-menu {
+        margin-top: 11.5%;
         margin-right:7%;
     
     }
 
-    .Mobile-nav-logged-out .toggle-menu .svg-outside {
+
+
+    .Mobile-nav-logged-in  {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+    }
+
+
+
+    .mobile-nav-logged-out .toggle-menu .svg-outside {
         margin-top: 10%;
     
     }
@@ -215,9 +239,32 @@
     .links-inside .link-item-arrow {
         display: flex;
         justify-content: space-between;
-        margin-bottom: 10%;
         max-height: 60px;
         margin-bottom:12%;
+    }
+    .links-inside .link-item-arrow-logged .arrow-open {
+        max-height: 15px;
+        margin-top: 10px;
+        margin-right: 10px;
+    }
+
+    .links-inside .link-item-arrow-logged {
+        display: flex;
+        justify-content: space-between;
+        max-height: 60px;
+    }
+
+    .links-inside .link-item img {
+        width: 48px;
+        height: 48px;
+        margin-right: 13%;
+        margin-top: 5%;
+    }
+
+    .links-inside .link-item {
+        display: flex;
+        justify-content: flex-start;
+        margin-bottom: 10%;
     }
 
     .links-inside .link-item-arrow h5{
@@ -229,6 +276,98 @@
     	color: #233D4D;
         margin-top: 20px;
     }
+    .links-inside .link-item-arrow-logged h5{
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 28px;
+    	color: #233D4D;
+        margin-top: 5px;
+    }
 
+    #green-color {
+        color: #619B8A;
+    }
 
+    .links-inside .link-item p {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 28px;
+        color: #233D4D;
+    }
+
+}
+
+.desktop-nav-logged-out {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 92%;
+    margin: 2% auto;
+}
+
+.desktop-nav-logged-out img {
+    width: 9.8%;
+    height: 100%;
+}
+
+.desktop-nav-logged-out .desktop-links-logged-out {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    margin-top: 10px;
+}
+
+.desktop-nav-logged-out .desktop-links-logged-out li a{
+    text-decoration: none;
+    color: black;
+}
+
+.desktop-nav-logged-out .desktop-links-logged-out li{
+    max-height: 30px;
+}
+
+.desktop-nav-logged-out .desktop-links-logged-out .sign-up-btn {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    background: #619B8A;
+    border-radius: 4px;
+    padding: 5% 19%;
+    min-width: 150px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+
+.desktop-nav-logged-out .desktop-links-logged-out .button {
+    min-width: 100px;
+}
+
+.desktop-nav-logged-out .desktop-links-logged-out #or-li {
+    width: 20px;
+    margin-right: 10%;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    color: #233D4D;
+    margin-top: 1%;
+}
+
+.desktop-nav-logged-out .desktop-links-logged-out .button-white {
+    width: 80px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    color: #233D4D;
+    margin-top: 1%;
 }

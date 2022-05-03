@@ -1,6 +1,4 @@
 import React from 'react'
-import FooterDesktop from '../../Layouts/Footer/FooterDesktop'
-import FooterMobile from '../../Layouts/Footer/FooterMobile'
 import GoogleMapsBg from '../../Layouts/GoogleMapsBg'
 import DesktopNavSignForms from '../../Layouts/Navigation/DesktopNavSignForms'
 import MobileNavLoggedOut from '../../Layouts/Navigation/MobileNavLoggedOut'
