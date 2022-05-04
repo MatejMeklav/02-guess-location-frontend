@@ -4,7 +4,7 @@ import { MdMenu } from 'react-icons/md';
 import { AiOutlinePlus, AiOutlineClose } from "react-icons/ai";
 import MobileLinksHamburgerLoggedOut from './Links/MobileLinksHamburgerLoggedOut';
 import { IconContext } from 'react-icons';
-import '../../Assets/Styles/SignInUp.css';
+import '../../Assets/Styles/SignInUp.css'
 
 export default function MobileNavLoggedOut() {
 

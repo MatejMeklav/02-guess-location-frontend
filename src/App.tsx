@@ -7,6 +7,8 @@ import EmailSent from './Pages/SignUp/EmailSent';
 import EmailConfirmed from './Pages/SignUp/EmailConfirmed';
 import LocationAdd from './Pages/Location/LocationAdd';
 import ProfileSettings from './Pages/Profile/ProfileSettings';
+import Profile from './Pages/Profile/Profile';
+import Logout from './Pages/SignIn/Logout';
 
 function App() {
   return (
@@ -19,6 +21,8 @@ function App() {
       <Route path="/confirm-email/:token" element={<EmailConfirmed></EmailConfirmed>}></Route>
       <Route path="/create" element={<LocationAdd></LocationAdd>}></Route>
       <Route path="/settings" element={<ProfileSettings></ProfileSettings>}></Route>
+      <Route path="/profile" element={<Profile></Profile>}></Route>
+      <Route path='/logout' element={<Logout></Logout>}></Route>
     </Routes>
   </BrowserRouter>
   

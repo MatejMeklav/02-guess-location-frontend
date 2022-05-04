@@ -9,8 +9,9 @@ import MobileNavLoggedOut from "../../Layouts/Navigation/MobileNavLoggedOut";
 import '../../Assets/Styles/Home.css';
 import '../../Assets/Styles/SignInUp.css';
 import HomeLoggedInMobile from "../../Layouts/Home/HomeLoggedInMobile";
-import HomeLoggedOutMobile from "../../Layouts/Home/HomeLoggedOutMobile";
-import Footer from "../../Layouts/Footer/Footer";
+import '../../Assets/Styles/footer.css';
+import FooterDesktop from "../../Layouts/Footer/FooterDesktop";
+import FooterMobile from "../../Layouts/Footer/FooterMobile";
 
 
 export default function Home() {
@@ -40,7 +41,8 @@ export default function Home() {
       <MobileNavLoggedIn></MobileNavLoggedIn>
       <HomeLoggedIn></HomeLoggedIn>
       <HomeLoggedInMobile></HomeLoggedInMobile>
-      <Footer></Footer>
+      <FooterDesktop></FooterDesktop>
+      <FooterMobile></FooterMobile>
     </div>   
     )
   }else {
@@ -49,8 +51,8 @@ export default function Home() {
         <DesktopNavLoggedOut></DesktopNavLoggedOut>
         <MobileNavLoggedOut></MobileNavLoggedOut>
         <HomeLoggedOut></HomeLoggedOut>
-        <HomeLoggedOutMobile></HomeLoggedOutMobile>
-        <Footer></Footer>
+        <FooterDesktop></FooterDesktop>
+        <FooterMobile></FooterMobile>
       </div>
     )
 

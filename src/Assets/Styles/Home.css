@@ -2,7 +2,7 @@
     .Mobile-nav-logged-out{
         display: none;
     }
-    .mobile-nav-logged-in {
+    .Mobile-nav-logged-in {
         display: none;
     }
 
@@ -13,6 +13,95 @@
     .home-logged-out-mobile {
         display: none;
     }
+    .home-page .home-logged-out .upper-container{
+        background-image: url('../../Layouts/Images/background-world-map.png');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 65% 60%;
+    }
+
+    .home-page .home-logged-out .lower-container .top h4 {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 34px;
+        line-height: 40px;
+        text-align: center;
+        letter-spacing: 0.25px;
+        color: #619B8A;
+    }
+    
+    .home-page .home-logged-out .lower-container .top p {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 19px;
+        text-align: center;
+        color: #233D4D;
+    }
+
+    .home-page .home-logged-out .lower-container .images {
+        display: flex;
+        max-width: 90%;
+        justify-content: space-between;
+        margin: 0 auto 5%;
+    }
+    .home-page .home-logged-out .lower-container .sign-up-btn {
+    max-width: 8%;
+    margin: 0 auto 5%;
+    height: 39px;
+}
+
+.home-page .home-logged-out .lower-container .sign-up-btn .green-btn {
+    min-height: 100%;
+}
+
+.desktop-nav-logged-in {
+    display: flex;
+    justify-content: space-between;
+    max-width: 90%;
+    margin: 1% auto 2%;
+}
+.desktop-nav-logged-in img {
+    max-height: 40px;
+}
+.desktop-nav-logged-in ul li img {
+    margin-top: 2px;
+    max-width: 36px;
+    max-height: 36px;
+}
+
+
+.desktop-nav-logged-in .geotagger-logo {
+    margin-top: 10px;
+}
+.desktop-nav-logged-in ul {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    min-width: 30%;
+}
+.desktop-nav-logged-in ul a {
+    text-decoration: none;
+}
+.desktop-nav-logged-in ul .text {
+    margin-top: 10px;
+}
+
+.desktop-nav-logged-in ul li  {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    color: #233D4D;
+}
+
+.home-logged-in {
+    min-height: 1500px;
+}
 
 }
 
@@ -31,6 +120,108 @@
   .home-logged-out {
       display: none;
   }
+
+  .home-page .home-logged-out .upper-container .upper-container-text {
+      max-width: 80%;
+      background-image:none;
+      background-size: 0;
+      margin: 0 auto;
+  }
+
+  .home-page .home-logged-out .upper-container .upper-container-text h2 {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 34px;
+    line-height: 40px;
+    text-align: center;
+    letter-spacing: 0.25px;
+    color: #619B8A;
+    margin-top: 20%;
+  }
+
+  .home-page .home-logged-out .upper-container .upper-container-text p {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    color: #233D4D;
+    margin-top: 0;
+  }
+
+  .home-page .home-logged-out .upper-container .upper-container-text a{
+      margin: 0 auto 20%;
+      min-width: 100%;
+      display: flex;
+      justify-content: center;
+      text-decoration: none;
+  }
+
+  .home-page .home-logged-out .upper-container .upper-container-text .green-btn{
+    
+    min-width: 30%;
+}
+
+  .home-page .home-logged-out .upper-container .background-image {
+    background-image: url('../../Layouts/Images/background-world-map.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    min-width: 100%;
+    min-height: 200px;
+
+  }
+
+  .home-page .home-logged-out .lower-container .top {
+      min-width: 85%;
+  }
+
+  .home-page .home-logged-out .lower-container .top h4 {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 28px;
+    text-align: center;
+    color: #619B8A;
+    margin-top: 25%;
+  }
+
+  .home-page .home-logged-out .lower-container .top p {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    color: #233D4D;
+}
+
+.home-page .home-logged-out .lower-container .images {
+    display: flex;
+    max-width: 85%;
+    justify-content: space-between;
+    flex-direction: column;
+    margin: 10% auto 10%;
+}
+
+.home-page .home-logged-out .lower-container .images .images-item {
+    margin-top: 5%;
+}
+
+
+.home-page .home-logged-out .lower-container .sign-up-btn a {
+    min-width: 30%;
+    margin: 0 auto;
+
+}
+
+.home-page .home-logged-out .lower-container .sign-up-btn a .green-btn {
+    min-width: 30%;
+    margin: 0 35% 10% 35%;
+}
+
 
 }
 
@@ -74,12 +265,6 @@
     flex-direction: column;
 }
 
-.home-page .home-logged-out .upper-container{
-    background-image: url('../../Layouts/Images/background-world-map.png');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 65% 60%;
-}
 
 .home-page .home-logged-out .upper-container-text {
     display: flex;
@@ -117,43 +302,5 @@
 .home-page .home-logged-out .lower-container .top {
     max-width: 36%;
     margin: 0 auto 5% auto;
-}
-
-.home-page .home-logged-out .lower-container .top h4 {
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 34px;
-    line-height: 40px;
-    text-align: center;
-    letter-spacing: 0.25px;
-    color: #619B8A;
-}
-
-.home-page .home-logged-out .lower-container .top p {
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 19px;
-    text-align: center;
-    color: #233D4D;
-}
-
-.home-page .home-logged-out .lower-container .images {
-    display: flex;
-    max-width: 90%;
-    justify-content: space-between;
-    margin: 0 auto 5%;
-}
-
-.home-page .home-logged-out .lower-container .sign-up-btn {
-    max-width: 8%;
-    margin: 0 auto 5%;
-    height: 39px;
-}
-
-.home-page .home-logged-out .lower-container .sign-up-btn .green-btn {
-    min-height: 100%;
 }
 

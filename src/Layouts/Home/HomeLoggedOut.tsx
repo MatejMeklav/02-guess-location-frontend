@@ -14,6 +14,8 @@ export default function HomeLoggedOut() {
           <Link to={'/signup'}>
             <ButtonGreen page={false}></ButtonGreen>
           </Link>
+          <div className='background-image'>
+          </div>
         </div>
       </div>
       <div className='lower-container'>
@@ -23,7 +25,6 @@ export default function HomeLoggedOut() {
             Try to guess the location of image by selecting position
             on the map. When you guess it, it gives you the error distance.
           </p>
-
         </div>
         <div className='images'>
           <div className='images-item' id='image-one'></div>
