@@ -1,0 +1,178 @@
+.profile-settings {
+    max-width: 529px;
+    margin: 0 auto;
+    padding: 32px;
+}
+.profile-settings .information h4 {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 34px;
+    line-height: 40px;
+    letter-spacing: 0.25px;
+    color: #233D4D;
+    margin-top: 4%;
+    margin-bottom: 4%;
+}
+
+.profile-settings .information h4 span {
+    color: #619B8A;
+}
+
+.profile-settings .information p {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: #322D38;
+    margin-top: 3%;
+}
+
+.profile-settings .form .input-container {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+.profile-settings .form .input-container span {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 0.4px;
+    color: #000000;
+}
+.profile-settings .form .input-container-name {
+    display: flex;
+    justify-content: space-between;
+}
+.profile-settings .form .input-container-name .input-container {
+    min-width: 48%;
+}
+.profile-settings .form .input-container-name .input-container label {
+    margin-bottom: 2%;
+}
+.profile-settings .form .input-container-name .input-container {
+    margin-top: 1%;
+    margin-bottom: 5%;
+
+}
+.profile-settings .form  .links #settings-pic-btn {
+    min-width: 45%;
+    background: #619B8A;
+    border-radius: 4px;
+    text-decoration: none;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    padding-top: 5px;
+    
+}
+.profile-settings .form  .links #settings-pass-btn {
+    min-width: 45%;
+
+    background: #233D4D;
+    border-radius: 4px;
+    text-decoration: none;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    padding-top: 5px;
+
+}
+
+.profile-settings .form .links a {
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: #FFFFFF;
+}
+.profile-settings .form  .links {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5%;
+    min-height: 30px;
+    
+}
+
+
+.profile-settings .form .input-container .settings-form-input {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.42);
+    margin-top: 2%;
+}
+
+.profile-settings .form .submit {
+    max-width: 100%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.profile-settings .form .submit button {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    border: none;
+    color: #FFFFFF;
+    background-color: #619B8A;
+    min-width: 20%;
+    margin-right: 5%;
+    height: 40px;
+}
+
+.profile-settings .form .submit a {
+    text-decoration: none;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    margin-top: 12px;
+}
+
+.profile-settings .form .input-container img {
+        position: relative;
+        width: 23px;
+        height: 18px;
+        left: 500px;
+        bottom: 22px;
+    
+}
+.profile-settings .form #submit-password {
+    margin-top: 5%;
+}
+
+.profile-settings .profile-photo {
+    display: flex;
+    justify-content: center;
+    margin-top: 7%;
+    margin-bottom: 7%;
+}
+
+.profile-settings .form input[type="file"] {
+    display: none;
+}
+
+.profile-settings .form .custom-file-upload {
+    border: 1px solid #ccc;
+    display: inline-block;
+    padding: 8px 12px;
+    text-align: center;
+    cursor: pointer;
+    margin-bottom: 5%;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: #FFFFFF;
+    background: #619B8A;
+}

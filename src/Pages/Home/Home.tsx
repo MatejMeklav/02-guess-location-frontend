@@ -30,6 +30,8 @@ export default function Home() {
         setLogin(true);
         console.log('true');
       }
+    }else {
+      setLogin(false);
     }
 
   },[login])
