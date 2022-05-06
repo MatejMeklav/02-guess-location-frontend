@@ -176,3 +176,27 @@
     color: #FFFFFF;
     background: #619B8A;
 }
+
+.profile-settings .profile-settings {
+    background-color: #FFFFFF;
+    position: absolute;
+    min-width: 50%;
+    min-height: 100%;
+}
+
+.profile-settings .profile-settings p {
+    margin-bottom: 25px;
+}
+
+.profile-settings .profile-settings a {
+    background-color: #619B8A;
+    text-decoration: none;
+    color: #FFFFFF;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    padding: 8px 30px;
+    border-radius: 4px;
+}

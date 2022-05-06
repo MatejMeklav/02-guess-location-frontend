@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import axios from 'axios';
 import { url } from '../../Config/variables';
@@ -6,10 +6,12 @@ import jwtDecode from 'jwt-decode';
 import { useNavigate } from 'react-router';
 import { Link } from 'react-router-dom';
 import '../../Assets/Styles/ProfileSettings.css';
+import ConfirmedModal from '../../Layouts/ProfileSettings/ConfirmedModal';
 
 export default function ProfileSettings() {
 
   const navigate = useNavigate();
+  const [successfulResponse, setSuccessfulResponse] = useState(false);
   useEffect(() => {
     const key = localStorage.getItem('key');
     if (key) {
@@ -21,24 +23,25 @@ export default function ProfileSettings() {
     } else {
       navigate('/404');
     }
-  }, [])
+  }, [successfulResponse])
 
   const handleSubmit = (event: { preventDefault: () => void; }) => {
     console.log("submited");
-    var { email, firstName, lastName, password, confirmPassword } = document.forms[0];
-    console.log(email.value);
-    console.log(firstName.value);
+    var { email, firstName, lastName} = document.forms[0];
+
+    const headers = {
+      'Authorization': 'Bearer '+ localStorage.getItem('key'),
+    };
     axios
-      .post(url + 'signup', {
+      .put(url + 'me/update-user-info', {
 
         email: email.value,
         firstName: firstName.value,
         lastName: lastName.value,
-        password: password.value,
-        repeatedPassword: confirmPassword.value,
-      })
+      },{headers})
       .then(response => {
         console.log(response);
+        setSuccessfulResponse(true);
       })
       .catch(error => {
       });
@@ -46,6 +49,7 @@ export default function ProfileSettings() {
   }
   return (
     <div className='profile-settings'>
+      {successfulResponse ? <ConfirmedModal></ConfirmedModal>: ""}
       <div className='information'>
         <h4>Profile <span>settings.</span></h4>
         <p>Change your information.</p>

@@ -26,17 +26,12 @@ export default function ProfileSettingsImage() {
 
   const handleSubmit = (event: { preventDefault: () => void; }) => {
     console.log("submited");
-    var { email, firstName, lastName, password, confirmPassword } = document.forms[0];
-    console.log(email.value);
-    console.log(firstName.value);
+    var { image } = document.forms[0];
+    console.log(document.forms[0]);
     axios
       .post(url + 'signup', {
 
-        email: email.value,
-        firstName: firstName.value,
-        lastName: lastName.value,
-        password: password.value,
-        repeatedPassword: confirmPassword.value,
+        
       })
       .then(response => {
         console.log(response);

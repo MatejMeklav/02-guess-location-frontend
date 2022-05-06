@@ -14,8 +14,7 @@ export default function EmailConfirmed({}: Props) {
     useEffect(() => {
         console.log("hereee");
         axios
-      .post(url + 'email-confirmation/confirm/'+token, {
-      })
+      .post(url + 'email-confirmation/confirm/'+token,)
       .then(response => { 
         console.log(response);
         navigate('/signin');

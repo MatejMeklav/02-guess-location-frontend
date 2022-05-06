@@ -97,11 +97,9 @@
     line-height: 19px;
     text-align: center;
     color: #233D4D;
+    margin-left: 15px;
 }
 
-.home-logged-in {
-    min-height: 1500px;
-}
 
 }
 
@@ -303,4 +301,31 @@
     max-width: 36%;
     margin: 0 auto 5% auto;
 }
+
+
+.home-logged-in .upper-container h4,
+.home-logged-in .lower-container h4{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 34px;
+    line-height: 40px;
+    letter-spacing: 0.25px; 
+    color: #619B8A;
+}
+
+.home-logged-in .upper-container p,
+.home-logged-in .lower-container p{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: #233D4D;
+}
+
+.home-logged-in {
+    margin:5%;
+}
+
 

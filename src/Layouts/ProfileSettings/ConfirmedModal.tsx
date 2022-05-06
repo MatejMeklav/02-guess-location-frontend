@@ -8,7 +8,7 @@ export default function ConfirmedModal() {
             <h4>Information changed.</h4>
             <p>Your settings are saved.</p>
         </div>
-        <Link to={'/settings'}>CLOSE</Link>
+        <Link to={'/settings'} onClick={() => window.location.reload()}>CLOSE</Link>
     </div>
   )
 }

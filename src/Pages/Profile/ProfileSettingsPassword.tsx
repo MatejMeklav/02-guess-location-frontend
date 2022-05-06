@@ -4,11 +4,12 @@ import { useNavigate } from 'react-router';
 import axios from 'axios';
 import { url } from '../../Config/variables';
 import { Link } from 'react-router-dom';
+import ConfirmedModal from '../../Layouts/ProfileSettings/ConfirmedModal';
 
 export default function ProfileSettingsPassword() {
 
   const navigate = useNavigate();
-  const [userId, setUserId] = useState("");
+  const [successfulResponse, setSuccessfulResponse] = useState(false);
   useEffect(() => {
     const key = localStorage.getItem('key');
     if (key) {
@@ -16,39 +17,41 @@ export default function ProfileSettingsPassword() {
       const decoded: any = jwtDecode(key);
       if (decoded.exp * 1000 < dateNow.getTime()) {
         navigate('/404');
-      }else {
-        setUserId(decoded.id);
-         
       }
     } else {
       navigate('/404');
     }
-  }, [setUserId])
+  }, [successfulResponse])
 
   const handleSubmit = (event: { preventDefault: () => void; }) => {
     console.log("submited");
-    var { email, firstName, lastName, password, confirmPassword } = document.forms[0];
-    console.log(email.value);
-    console.log(firstName.value);
-    axios
-      .post(url + 'signup', {
 
-        email: email.value,
-        firstName: firstName.value,
-        lastName: lastName.value,
-        password: password.value,
-        repeatedPassword: confirmPassword.value,
-      })
+    var { currentPassword, newPassword, confirmNewPassword } = document.forms[0];
+    console.log(document.forms[0]);
+    const headers = {
+      'Authorization': 'Bearer '+ localStorage.getItem('key'),
+    };
+    axios
+      .put(url + 'me/update-user-password', {
+
+        oldPassword: currentPassword.value,
+        password: newPassword.value,
+        repeatedPassword: confirmNewPassword.value,
+      },{headers})
       .then(response => {
         console.log(response);
+        setSuccessfulResponse(true);
       })
       .catch(error => {
+        console.log(error.request);
+
       });
     event.preventDefault();
   }
   
   return (
     <div className='profile-settings'>
+      {successfulResponse ? <ConfirmedModal></ConfirmedModal>: ""}
       <div className='information'>
         <h4>Profile <span>settings.</span></h4>
         <p>Change your password.</p>
@@ -57,18 +60,19 @@ export default function ProfileSettingsPassword() {
         <form onSubmit={handleSubmit}>
         <div className="input-container">
           <label><span>Curent password</span></label>
-          <input className="settings-form-input" type="password" name="curentPassword" />
+          <input className="settings-form-input" type="text" name="curentPassword" />
           <img src={require('../../Layouts/Images/visibleEye.png')} alt='eye' ></img>
         </div>
           <div className="input-container">
           <label><span>New password</span></label>
-          <input className="settings-form-input" type="password" name="newPassword" />
+          <input className="settings-form-input" type="text" name="newPassword" />
           <img id='toggle' src={require('../../Layouts/Images/visibleEye.png')} alt='eye' ></img>
         </div>
         <div className="input-container">
           <label><span>Confirm new password</span></label>
-          <input className="settings-form-input" type="password" name="confirmNewPassword" />
-          <img src={require('../../Layouts/Images/visibleEye.png')} alt='eye' ></img>
+          <input className="settings-form-input" type="text" name="confirmNewPassword" />
+
+          <img id='toggle' src={require('../../Layouts/Images/visibleEye.png')} alt='eye' ></img>
         </div>
         <div id='submit-password' className='submit'>
           <button type='submit'>SUBMIT</button>
