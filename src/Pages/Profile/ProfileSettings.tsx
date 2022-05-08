@@ -12,6 +12,10 @@ export default function ProfileSettings() {
 
   const navigate = useNavigate();
   const [successfulResponse, setSuccessfulResponse] = useState(false);
+  const [email, setEmail] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [responseError, setResponseError] = useState("");
   useEffect(() => {
     const key = localStorage.getItem('key');
     if (key) {
@@ -23,7 +27,23 @@ export default function ProfileSettings() {
     } else {
       navigate('/404');
     }
-  }, [successfulResponse])
+
+    const headers = {
+      'Authorization': 'Bearer '+ localStorage.getItem('key'),
+    };
+
+    axios
+      .get(url + 'users/user',{headers})
+      .then(response => {
+        console.log(response);
+        setEmail(response.data.email);
+        setFirstName(response.data.firstName);
+        setLastName(response.data.lastName);
+      })
+      .catch(error => {
+      });
+
+  }, [successfulResponse, responseError])
 
   const handleSubmit = (event: { preventDefault: () => void; }) => {
     console.log("submited");
@@ -44,6 +64,7 @@ export default function ProfileSettings() {
         setSuccessfulResponse(true);
       })
       .catch(error => {
+        setResponseError(error.response.data);
       });
     event.preventDefault();
   }
@@ -53,21 +74,22 @@ export default function ProfileSettings() {
       <div className='information'>
         <h4>Profile <span>settings.</span></h4>
         <p>Change your information.</p>
+        {responseError ? <p>{responseError}</p>:""}
       </div>
       <div className="form">
         <form onSubmit={handleSubmit}>
           <div className="input-container">
             <label><span>Email</span></label>
-            <input className="settings-form-input" type="text" name="email" />
+            <input className="settings-form-input" defaultValue={email} type="text" name="email" />
           </div>
           <div className='input-container-name'>
             <div className="input-container">
               <label><span>First Name</span></label>
-              <input className="settings-form-input" type="text" name="firstName" />
+              <input className="settings-form-input" defaultValue={firstName} type="text" name="firstName" />
             </div>
             <div className="input-container">
               <label><span>Last Name</span></label>
-              <input className="settings-form-input" type="text" name="lastName" />
+              <input className="settings-form-input" defaultValue={lastName} type="text" name="lastName" />
             </div>
           </div>
           <div className='links'>

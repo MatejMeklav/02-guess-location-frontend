@@ -119,6 +119,7 @@
     font-weight: 400;
     font-size: 16px;
     line-height: 19px;
+    border-radius: 5px;
     border: none;
     color: #FFFFFF;
     background-color: #619B8A;
@@ -166,6 +167,7 @@
     display: inline-block;
     padding: 8px 12px;
     text-align: center;
+    border-radius: 4px;
     cursor: pointer;
     margin-bottom: 5%;
     font-family: 'Roboto';
@@ -199,4 +201,58 @@
     line-height: 19px;
     padding: 8px 30px;
     border-radius: 4px;
+}
+
+
+@media screen and (max-width: 500px) {
+    .profile-settings {
+        min-width: 85%;
+    }
+
+    .profile-settings .form .input-container img {
+        left: 93%;
+    }
+
+    .profile-settings .form .submit {
+        justify-content: space-between;
+        margin-right: 10px;
+    }
+    .profile-settings .form .submit button  {
+        min-width: 40%;
+    }
+
+    .profile-settings .form .links {
+        flex-direction: column;
+    }
+
+    .profile-settings .form .links #settings-pass-btn {
+        margin-top: 3%;
+        margin-bottom: 2%;
+        min-height: 29px;
+        padding-top: 10px;
+        font-family: 'Raleway';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 19px;
+        color: #FFFFFF;
+        
+    }
+    .profile-settings .form .links #settings-pic-btn {
+        margin-top: 2%;
+        margin-bottom: 5%;
+        min-height: 29px;
+        padding-top: 10px;
+        font-family: 'Raleway';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 19px;
+        color: #FFFFFF;
+    }
+    
+
+    
+
+   
 }

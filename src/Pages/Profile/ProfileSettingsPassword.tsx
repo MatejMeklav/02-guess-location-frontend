@@ -10,6 +10,7 @@ export default function ProfileSettingsPassword() {
 
   const navigate = useNavigate();
   const [successfulResponse, setSuccessfulResponse] = useState(false);
+  const [responseError, setResponseError] = useState("");
   useEffect(() => {
     const key = localStorage.getItem('key');
     if (key) {
@@ -24,9 +25,9 @@ export default function ProfileSettingsPassword() {
   }, [successfulResponse])
 
   const handleSubmit = (event: { preventDefault: () => void; }) => {
-    console.log("submited");
-
-    var { currentPassword, newPassword, confirmNewPassword } = document.forms[0];
+    let oldPassword = (document.getElementById("curentPassword") as HTMLInputElement).value;
+    let newPassword = (document.getElementById("newPassword") as HTMLInputElement).value;
+    let confirmNewPassword = (document.getElementById("confirmNewPassword") as HTMLInputElement).value;
     console.log(document.forms[0]);
     const headers = {
       'Authorization': 'Bearer '+ localStorage.getItem('key'),
@@ -34,16 +35,16 @@ export default function ProfileSettingsPassword() {
     axios
       .put(url + 'me/update-user-password', {
 
-        oldPassword: currentPassword.value,
-        password: newPassword.value,
-        repeatedPassword: confirmNewPassword.value,
+        oldPassword: oldPassword,
+        password: newPassword,
+        repeatedPassword: confirmNewPassword,
       },{headers})
       .then(response => {
         console.log(response);
         setSuccessfulResponse(true);
       })
       .catch(error => {
-        console.log(error.request);
+        setResponseError("Invalid input!");
 
       });
     event.preventDefault();
@@ -55,24 +56,25 @@ export default function ProfileSettingsPassword() {
       <div className='information'>
         <h4>Profile <span>settings.</span></h4>
         <p>Change your password.</p>
+        {responseError ? <p>{responseError}</p>: ""}
       </div>
       <div className="form">
         <form onSubmit={handleSubmit}>
         <div className="input-container">
           <label><span>Curent password</span></label>
-          <input className="settings-form-input" type="text" name="curentPassword" />
-          <img src={require('../../Layouts/Images/visibleEye.png')} alt='eye' ></img>
+          <input className="settings-form-input" id="curentPassword" type="text" name="curentPassword" />
+          {successfulResponse ? "": <img src={require('../../Layouts/Images/visibleEye.png')} alt='eye' ></img>}
+          
         </div>
           <div className="input-container">
           <label><span>New password</span></label>
-          <input className="settings-form-input" type="text" name="newPassword" />
-          <img id='toggle' src={require('../../Layouts/Images/visibleEye.png')} alt='eye' ></img>
+          <input className="settings-form-input" id="newPassword" type="text" name="newPassword" />
+          {successfulResponse ? "": <img src={require('../../Layouts/Images/visibleEye.png')} alt='eye' ></img>}
         </div>
         <div className="input-container">
           <label><span>Confirm new password</span></label>
-          <input className="settings-form-input" type="text" name="confirmNewPassword" />
-
-          <img id='toggle' src={require('../../Layouts/Images/visibleEye.png')} alt='eye' ></img>
+          <input className="settings-form-input" id="confirmNewPassword" type="text" name="confirmNewPassword" />
+          {successfulResponse ? "": <img src={require('../../Layouts/Images/visibleEye.png')} alt='eye' ></img>}
         </div>
         <div id='submit-password' className='submit'>
           <button type='submit'>SUBMIT</button>
