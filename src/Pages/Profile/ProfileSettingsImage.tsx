@@ -4,9 +4,11 @@ import { useNavigate } from 'react-router';
 import axios from 'axios';
 import { url } from '../../Config/variables';
 import { Link } from 'react-router-dom';
+import ConfirmedModal from '../../Layouts/ProfileSettings/ConfirmedModal';
 
 export default function ProfileSettingsImage() {
   const navigate = useNavigate();
+  const [successfulResponse, setSuccessfulResponse] = useState(false);
   const [secureUrl, setSecureUrl] = useState("");
   const [imgUrl, setImgUrl] = useState('');
   const [fileToUpload, setFileToUpload] = useState();
@@ -29,6 +31,7 @@ export default function ProfileSettingsImage() {
     axios
       .get(url + 'users/user',{headers})
       .then(response => {
+        console.log(response.data.imageUrl);
         setImgUrl(response.data.image);
       })
       .catch(error => {
@@ -51,20 +54,18 @@ export default function ProfileSettingsImage() {
          console.log(err) 
       });
       const imageUrl = secureUrl.split('?')[0];
-      axios({
-        method: "PUT",
-        url: url+"me/update-user-profile-image",
-        data: {image: imageUrl},  // NOTE - this is the file not the FormData Object
-        headers: headers}).then(res => {
+      axios.put(url+"me/update-user-profile-image",
+      {image:imageUrl},
+    {headers}).then(res => {
           console.log(res);
-       })
+      })
       .catch(err => {
          console.log(err) 
       });
       setImgUrl(imageUrl);
       setSecureUrl("");
     }
-  }, [secureUrl, navigate, fileToUpload])
+  }, [secureUrl, navigate, fileToUpload, successfulResponse])
 
   const handleSubmit = async (event: { preventDefault: () => void; }) => {
     
@@ -79,6 +80,7 @@ export default function ProfileSettingsImage() {
     axios
       .get(url + 'secure-url',{headers})
       .then(response => {
+        setSuccessfulResponse(true);
         setSecureUrl(response.data);
       })
       .catch(error => {
@@ -88,13 +90,13 @@ export default function ProfileSettingsImage() {
   
   return (
     <div className='profile-settings'>
+      {successfulResponse ? <ConfirmedModal></ConfirmedModal>: ""}
       <div className='information'>
         <h4>Profile <span>settings.</span></h4>
         <p>Change your profile photo.</p>
       </div>
       <div className='profile-photo'>
-        
-        <img id='toggle' src={require('../../Layouts/Images/ProfileLogo.png')} alt='profile logo' ></img>
+        {imgUrl ? <img id='toggle' src={imgUrl} alt='profile logo' ></img> : <img id='toggle' src={require('../../Layouts/Images/ProfileLogo.png')} alt='profile logo' ></img> }
       </div>
       <div className="form">
         <form id='form-image' onSubmit={handleSubmit}>
@@ -102,12 +104,6 @@ export default function ProfileSettingsImage() {
         <label className="custom-file-upload">
           UPLOAD NEW IMAGE
         <input type="file" id='fileUpload'/>
-        <input 
-          className="settings-form-input" 
-          type="file" 
-          name="image"
-          id='fileUpload2'
-         />
         </label>
         </div>
         <div className='submit'>

@@ -158,6 +158,11 @@
     margin-bottom: 7%;
 }
 
+.profile-settings .profile-photo img {
+    max-width: 100px;
+    max-height: 100px;
+}
+
 .profile-settings .form input[type="file"] {
     display: none;
 }
