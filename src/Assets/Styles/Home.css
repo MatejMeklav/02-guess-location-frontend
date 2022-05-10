@@ -367,7 +367,9 @@
 }
 
 .home-logged-in .upper-container .load-more-div,
-.home-logged-in .lower-container .load-more-div {
+.home-logged-in .lower-container .load-more-div,
+.home-logged-in-mobile .upper-container .load-more-div,
+.home-logged-in-mobile .lower-container .load-more-div  {
     margin: 1.5% 1.5% 0 1.5%;
     display: flex;
     justify-content: center;
@@ -375,7 +377,9 @@
 }
 
 .home-logged-in .upper-container .load-more-div button,
-.home-logged-in .lower-container .load-more-div button {
+.home-logged-in .lower-container .load-more-div button,
+.home-logged-in-mobile .upper-container .load-more-div button,
+.home-logged-in-mobile .lower-container .load-more-div button {
     background: #ffff;
     border: none;
     font-family: 'Roboto';
@@ -405,4 +409,75 @@
     margin-bottom: 2.5%;
     background-size: 100% 100%;
     flex: 0 0 33.3333333%;
+}
+
+.home-logged-in-mobile {
+    margin: 7.5%;
+}
+
+.home-logged-in-mobile .upper-container h4,
+.home-logged-in-mobile .lower-container h4 {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 34px;
+    line-height: 40px;
+    letter-spacing: 0.25px;
+    color: #619B8A;
+    max-width: 70%;
+    margin-bottom: 0;
+}
+
+.home-logged-in-mobile .upper-container p,
+.home-logged-in-mobile .lower-container p {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: #233D4D;
+    max-width: 96%;
+}
+
+.home-logged-in-mobile .upper-container .pb-list {
+    display: flex;
+    overflow:scroll;
+    margin-right: -8%;
+}
+
+.home-logged-in-mobile .upper-container .pb-list .pb-item{
+        min-width: 345px;
+        min-height: 194px;
+        margin-right: 5%;
+}
+
+.home-logged-in-mobile .upper-container .pb-list .pb-item p {
+    margin-top: 22.5%;
+    text-align: center;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 36px;
+    color: #FFFFFF;
+}
+
+.home-logged-in-mobile .lower-container .location-list{
+    min-width: 70%;
+    flex-direction: row;
+}
+
+.home-logged-in-mobile .lower-container .location-list .location-item{
+    max-width: 100%;
+    border-radius: 4px;
+    min-height: 193px;
+    flex-direction: row;
+    background-size: 100% 100%;
+    margin: 6px -6px 6px -6px;
+
+}
+
+.home-logged-in-mobile .upper-container .load-more-div,
+.home-logged-in-mobile .lower-container .load-more-div{
+    margin-top: 5%;
 }
