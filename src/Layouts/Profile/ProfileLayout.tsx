@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
-import PbImagesList from '../Home/PbImagesList'
 import UsersUploads from './UsersUploads'
 import '../../Assets/Styles/Profile.css'
 import { url } from '../../Config/variables'
 import axios from 'axios'
+import PbImagesListProfile from './PbImagesListProfile'
 
 export default function ProfileLayout() {
 
@@ -17,7 +17,6 @@ export default function ProfileLayout() {
             'Authorization': 'Bearer '+ localStorage.getItem('key'),
           };
         axios.get(url +'users/user',{headers}).then(response => {
-            console.log(response.data);
             setFirstName(response.data.firstName);
             setLastName(response.data.lastName);
             setImageUrl(response.data.image);
@@ -36,7 +35,7 @@ export default function ProfileLayout() {
 
             <div className='best-guess'>
                 <h5>My best guesses</h5>
-                <PbImagesList></PbImagesList>
+                <PbImagesListProfile></PbImagesListProfile>
             </div>
             <div className='my-uploads'>
                 <h5>My uploads</h5> 

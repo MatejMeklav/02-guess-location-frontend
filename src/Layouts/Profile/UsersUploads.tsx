@@ -2,12 +2,15 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { url } from '../../Config/variables';
 import {FaPenSquare} from 'react-icons/fa';
-import {MdOutlineCancelPresentation} from 'react-icons/md';
+import {MdEditLocationAlt, MdOutlineCancelPresentation} from 'react-icons/md';
+import { Navigate, useNavigate } from 'react-router';
+import DeleteLocation from '../Location/DeleteLocation';
 
 export default function UsersUploads() {
     const [myUploadsList, setMyUploadsList] = useState<any[]>([]);
     const [rowCount, setRowCount] = useState<number>(1);
-
+    const navigation = useNavigate();
+    const[deleteLocationClicked, setDeleteLocationClicked] = useState(false);
     useEffect(() =>{
             const headers = {
                 'Authorization': 'Bearer '+ localStorage.getItem('key'),
@@ -21,12 +24,23 @@ export default function UsersUploads() {
               });
 
         console.log(rowCount);
-    },[rowCount])
+    },[rowCount, deleteLocationClicked]);
+
+    const editLocation = async (locationId : any) => {
+        navigation('/edit/'+locationId);
+    }
+
+    const deleteLocation = async (locationId : any) => {
+        setDeleteLocationClicked(true);
+    }
+
+
     interface pbObject {
         id: string;
         image: string;
       }
     var myUploadsArray = new Array<pbObject>();
+
         
 
     
@@ -36,27 +50,20 @@ export default function UsersUploads() {
     }
     myUploadsArray = myUploadsArray.slice(0, (rowCount*4));
 
-    console.log(myUploadsArray);
 
     const itemsList = myUploadsArray.map((item) =>
-    <div style={{
-        backgroundImage: "url(" + item.image + ")", 
-        backgroundPosition: 'center',
-        backgroundSize: 'cover',
-        backgroundRepeat: 'no-repeat'
-    }} className='upload-item' key={item.id}>
-        <div className='pen-background' style={{ background: "#ffff" }}>
-            <FaPenSquare size={40} color={'green'}></FaPenSquare>
-        </div>
-        <div className='x-background' style={{ background: "#9B6161" }}>
-            <MdOutlineCancelPresentation className='icon' size={40} color={'white'}></MdOutlineCancelPresentation>
-        </div>
+    <div className='upload-item' key={item.id}>
+        <img src={item.image} alt='location' ></img>
+        <img className='pen-icon' onClick={() => editLocation(item.id)} src={require('../Images/react-icon-pen.png')} alt='pen-icon'></img>
+        <img className='x-icon' onClick={() => deleteLocation(item.id)} src={require('../Images/react-icon-x.png')} alt='x-icon'></img>
+        
     </div>
 )
 
 
     return (
         <>
+            {deleteLocationClicked ? <DeleteLocation></DeleteLocation> : ""}
             <div className='my-uploads-list'>{itemsList}</div>
             <div className='load-more-div' >
                 <button type='button' onClick={() => setRowCount(rowCount + 1)}>LOAD MORE</button>

@@ -34,7 +34,6 @@ export default function LocationsList() {
     }
     locationsArray = locationsArray.slice(0, (rowCount*3));
 
-    console.log(locationsArray);
 
     const itemsList = locationsArray.map((item) =>
     <div style={{ backgroundImage: "url(" + item.image + ")" }} className='location-item' key={item.id}></div>

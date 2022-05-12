@@ -13,6 +13,7 @@ import NotFound from './Pages/NotFound';
 import ProfileSettingsPassword from './Pages/Profile/ProfileSettingsPassword';
 import ProfileSettingsImage from './Pages/Profile/ProfileSettingsImage';
 import Location from './Pages/Location/Location';
+import EditLocation from './Layouts/Location/EditLocation';
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
       <Route path='/settings-password' element={<ProfileSettingsPassword></ProfileSettingsPassword>}></Route>
       <Route path='/settings-profile-picture' element={<ProfileSettingsImage></ProfileSettingsImage>}></Route>
       <Route path='/location' element={<Location></Location>}></Route>
+      <Route path='/edit/:id' element={<EditLocation></EditLocation>}></Route>
     </Routes>
   </BrowserRouter>
   

@@ -1,6 +1,4 @@
 import axios from 'axios';
-import { getUnpackedSettings } from 'http2';
-import { stringify } from 'querystring';
 import React, { useEffect, useState } from 'react'
 import { url } from '../../Config/variables';
 
@@ -40,7 +38,6 @@ export default function PbImagesList() {
     }
     pbArray = pbArray.slice(0, (rowCount*3));
 
-    console.log(pbArray);
 
     const itemsList = pbArray.map((item) =>
     <div style={{
@@ -50,7 +47,6 @@ export default function PbImagesList() {
         backgroundRepeat: 'no-repeat'
     }} className='pb-item' key={item.id}><p className='meters-paragraph'>{item.meters} m</p></div>
 )
-
 
     return (
         <>

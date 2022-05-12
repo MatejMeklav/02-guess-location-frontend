@@ -1,35 +1,42 @@
 .profile-page .my-uploads-list .upload-item {
-    min-width: 24%;
     flex: 0 0 0 25%;
     min-height: 175px;   
     border-radius: 4px 0px 0px 4px;
     background-size: 100% 100%;
     margin-bottom: 1%;
+    min-width: 310px;
+
+    position: relative;
 }
 
-.profile-page .my-uploads-list .upload-item .pen-background {
-    position: relative;
-    padding-right: 5px;
-    padding-bottom: 5px;
-    width: 35px;
-    height: 35px;
-    border-radius: 4px;
+.profile-page .my-uploads-list .upload-item img {
+    max-width: 310px;
+}
+
+.profile-page .my-uploads-list .upload-item .pen-icon {
+    position: absolute;
     left: 15px;
-    top: 10px;
+    top: 15px;
+    cursor: pointer;
+    
 }
-.profile-page .my-uploads-list .upload-item .x-background {
-    position: relative;
 
-    width: 37px;
-    height: 30px;
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap');
+
+
+.profile-page .my-uploads-list .upload-item .x-icon{
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background: #9B6161;
     border-radius: 4px;
-    left: 100px;
-    top: 10px;
+    border: none;
+    color: #FFFFFF;
+    top: 15px;
+    right: 15px;  
+    cursor: pointer;
 }
-.profile-page .my-uploads-list .upload-item .x-background .icon {
-    position: relative;
-    margin-bottom: 10px;
-}
+
 
 .profile-page .my-uploads-list{
     display: flex;
@@ -72,4 +79,55 @@
     margin-right: 3%;
     max-width: 64px;
     max-height: 64px;
+}
+
+.profile-page .pb-list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 100%;
+}
+
+.profile-page .pb-list .pb-item {
+    flex: 0 0 0 25%;
+    min-width: 24%;
+    min-height: 175px;
+    margin-bottom: 1.5%;
+    border-radius: 4px;
+}
+
+.profile-page.best-guess {
+    max-width: 100%;
+}
+
+.profile-page .pb-list .pb-item .meters-paragraph {
+    display: relative;
+    margin-top: 20%;
+    margin-bottom: 0;
+    text-align: center;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 36px;
+    color: #FFFFFF;
+}
+
+.profile-page .load-more-div {
+    display: flex;
+    justify-content: center;
+}
+
+.profile-page .load-more-div button {
+    margin-top: 2%;
+    border: 1px solid #669F89;
+    border-radius: 4px;
+    color: #619B8A;
+    background: none;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    padding: 8px 22px;
 }

@@ -40,8 +40,6 @@ export default function PbImagesListProfile() {
     }
     pbArray = pbArray.slice(0, (rowCount*4));
 
-    console.log(pbArray);
-
     const itemsList = pbArray.map((item) =>
     <div style={{
         backgroundImage: "linear-gradient(90deg, rgba(102, 159, 137, 0.6) 50%, rgba(159, 193, 129, 0.6) 128%),url(" + item.image + ")", 
