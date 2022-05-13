@@ -131,3 +131,65 @@
     line-height: 19px;
     padding: 8px 22px;
 }
+
+.delete-location-div {
+    position: absolute;
+    left: 32%;
+    width: 495px;
+    height: 226px;
+    background-color: #FFFFFF;
+    border-radius: 4px;
+}
+
+.delete-location-div h4 {
+    margin: 32px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 34px;
+    line-height: 40px;
+    letter-spacing: 0.25px;
+    color: #233D4D;
+}
+
+.delete-location-div p {
+    margin: 32px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: #233D4D;
+}
+
+.delete-location-div .submit {
+    margin: 32px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.delete-location-div .submit .submit-btn {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    padding: 8px 16px;
+    background: #619B8A;
+    border-radius: 4px;
+    border: none;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+.delete-location-div .submit .cancel-btn {
+    background: none;
+    border: none;
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: #233D4D;
+    cursor: pointer;
+}

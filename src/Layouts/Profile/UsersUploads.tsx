@@ -11,6 +11,7 @@ export default function UsersUploads() {
     const [rowCount, setRowCount] = useState<number>(1);
     const navigation = useNavigate();
     const[deleteLocationClicked, setDeleteLocationClicked] = useState(false);
+    const[deleteLocationId, setDeleteLocationId] = useState('');
     useEffect(() =>{
             const headers = {
                 'Authorization': 'Bearer '+ localStorage.getItem('key'),
@@ -23,18 +24,17 @@ export default function UsersUploads() {
                 console.log(error.response);
               });
 
-        console.log(rowCount);
-    },[rowCount, deleteLocationClicked]);
+        console.log(deleteLocationClicked);
+    },[rowCount, deleteLocationClicked, deleteLocationId]);
 
     const editLocation = async (locationId : any) => {
         navigation('/edit/'+locationId);
     }
 
     const deleteLocation = async (locationId : any) => {
+        setDeleteLocationId(locationId);
         setDeleteLocationClicked(true);
     }
-
-
     interface pbObject {
         id: string;
         image: string;
@@ -63,8 +63,10 @@ export default function UsersUploads() {
 
     return (
         <>
-            {deleteLocationClicked ? <DeleteLocation></DeleteLocation> : ""}
-            <div className='my-uploads-list'>{itemsList}</div>
+            <div className='my-uploads-list'>
+                {itemsList}
+                {deleteLocationClicked ? <DeleteLocation id={deleteLocationId}></DeleteLocation> : ""}
+            </div>
             <div className='load-more-div' >
                 <button type='button' onClick={() => setRowCount(rowCount + 1)}>LOAD MORE</button>
             </div>

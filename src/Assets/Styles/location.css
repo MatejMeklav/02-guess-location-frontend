@@ -88,3 +88,89 @@
 }
 
 
+.edit-location-container {
+    margin: 15% 22% 22% 20%;
+}
+
+.edit-location-container h4 {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 34px;
+    line-height: 40px;  
+    letter-spacing: 0.25px;
+    color: #233D4D;
+    text-align: center;
+    margin-bottom: 2%;
+}
+.edit-location-container h4 span {
+    color: #619B8A;
+}
+.edit-location-container img {
+    width: 100%;
+}
+
+.edit-location-container p {
+    margin-left: 2%;
+    margin-bottom: 5%;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: #000000;
+    opacity: 0.7;
+}
+
+.edit-location-container .submit-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 1% 2% 2% 2%;
+}
+
+.edit-location-container .submit-container .save-cancel-container {
+    min-width: 27%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.edit-location-container .submit-container .save-cancel-container .save-btn{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    padding: 10px 50px;
+    border: none;
+    background: #619B8A;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.edit-location-container .submit-container .save-cancel-container .cancel-btn {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: #233D4D;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.edit-location-container .submit-container .upload-btn {
+    background: #619B8A;
+    border-radius: 4px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: #FFFFFF;
+    padding: 10px 42px;
+    border: none;
+    cursor: pointer;
+}
