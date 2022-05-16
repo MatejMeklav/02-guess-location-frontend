@@ -79,6 +79,7 @@
     margin-right: 3%;
     max-width: 64px;
     max-height: 64px;
+    border-radius: 50%;
 }
 
 .profile-page .pb-list {
@@ -152,7 +153,8 @@
     color: #233D4D;
 }
 
-.delete-location-div p {
+.delete-location-div p,
+.delete-location-submit p {
     margin: 32px;
     font-family: 'Roboto';
     font-style: normal;
@@ -168,7 +170,8 @@
     justify-content: space-between;
 }
 
-.delete-location-div .submit .submit-btn {
+.delete-location-div .submit .submit-btn,
+.delete-location-submit .submit-btn {
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
@@ -192,4 +195,94 @@
     line-height: 19px;
     color: #233D4D;
     cursor: pointer;
+}
+
+.delete-location-submit {
+    position: absolute;
+    left: 38%;
+    background-color: #FFFFFF;
+    width: 355px;
+    max-height: 163px;
+}
+
+.delete-location-submit {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 36px;
+}
+
+.delete-location-submit button {
+    max-width: 30%;
+    margin: 0 auto;
+}
+
+.delete-location-submit p {
+    text-align: center;
+}
+@media screen and (max-width: 500px) {
+
+    .profile-page .profile-data img {
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+        margin-right: 0;
+    }
+
+    .profile-page .profile-data h4 {
+        margin-top: 20px;
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 28px;
+    }
+    
+    .profile-page .profile-data {
+        margin-top: 10%;
+        justify-content: space-between;
+        max-width: 70%;
+        margin-left: 0;
+    }
+
+    .profile-page .best-guess h5,
+    .profile-page .my-uploads h5 {
+        font-size: 24px;
+        line-height: 28px;
+        color: #619B8A;
+    }
+
+    .profile-page .best-guess .pb-list {
+        flex-direction: column;
+    }
+
+    .profile-page .best-guess .pb-list .pb-item {
+        margin-bottom: 4%;
+    }
+    .profile-page .my-uploads .my-uploads-list .upload-item {
+        min-width: 100%;
+    }
+    .profile-page .my-uploads .my-uploads-list .upload-item img {
+        max-width: 100%;
+    }
+
+    .profile-page {
+        margin: 36px;
+    }
+
+    .delete-location-div{
+        left: 5%;
+        width: 90%;
+    }
+
+    .delete-location-submit {
+        max-width: 70%;
+        left: 5%;
+    }
+
+    .delete-location-div h4 {
+        font-size: 34px;
+        line-height: 40px;
+        letter-spacing: 0.25px;
+    }
+
+
 }
