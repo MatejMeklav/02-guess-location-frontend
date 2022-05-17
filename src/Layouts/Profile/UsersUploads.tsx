@@ -53,7 +53,7 @@ export default function UsersUploads() {
 
     const itemsList = myUploadsArray.map((item) =>
     <div className='upload-item' key={item.id}>
-        <img src={item.image} alt='location' ></img>
+        <img className='location-image' src={item.image} alt='location' ></img>
         <img className='pen-icon' onClick={() => editLocation(item.id)} src={require('../Images/react-icon-pen.png')} alt='pen-icon'></img>
         <img className='x-icon' onClick={() => deleteLocation(item.id)} src={require('../Images/react-icon-x.png')} alt='x-icon'></img>
         

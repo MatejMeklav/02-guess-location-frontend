@@ -14,17 +14,17 @@ export default function DeleteLocation(id: any) {
 
     const deleteLoc = async () => {
       setDeleteLocationSubmited(true);
-        // console.log("dddddddd");
-        // const headers = {
-        //     'Authorization': 'Bearer '+ localStorage.getItem('key'),
-        //   };
-        // axios.delete(url +'location/delete-location',{data:{locationId}, headers}).then(response => {
-        //         console.log(response);
-        //   })
-        //   .catch(error => {
-        //     console.log(error.response);
-        //   });
-        //   window.location.reload();
+         console.log("dddddddd");
+         const headers = {
+             'Authorization': 'Bearer '+ localStorage.getItem('key'),
+          };
+         axios.delete(url +'location/delete-location',{data:{locationId}, headers}).then(response => {
+                 console.log(response);
+           })
+           .catch(error => {
+             console.log(error.response);
+           });
+           window.location.reload();
     }
 
     const cancel = async () => {

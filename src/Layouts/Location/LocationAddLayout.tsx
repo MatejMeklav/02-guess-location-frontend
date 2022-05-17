@@ -6,6 +6,7 @@ import { Icon } from 'leaflet';
 import marker from '../Images/location_no_bg.png'
 import axios from 'axios';
 import { url } from '../../Config/variables';
+import { useWindowSize } from './useWindowSize';
 
 export default function LocationAddLayout() {
 
@@ -23,6 +24,7 @@ export default function LocationAddLayout() {
   const [fullAddress, setFullAddress] = useState('');
   const [secureUrl, setSecureUrl] = useState('');
   const [locationCreated, setLocationCreated] = useState(false);
+  const [width, height] = useWindowSize();
 
   const headers = {
     'Authorization': 'Bearer '+ localStorage.getItem('key'),
@@ -131,8 +133,11 @@ export default function LocationAddLayout() {
       setSecureUrl("");
     }
     setFullAddress(municipality+" "+city+" "+town+" "+village+" "+postNumber+" "+country);
+    console.log("lioggg");
+    console.log(width);
+    console.log(showImage);
 
-  },[fileUploaded, showImage, country, postNumber, village, town, city, municipality, secureUrl]);
+  },[fileUploaded, showImage, country, postNumber, village, town, city, municipality, secureUrl, width]);
   
   const myIcon = new Icon({
     iconUrl: marker,
@@ -168,12 +173,14 @@ export default function LocationAddLayout() {
             <label className="custom-file-upload">
               <input type="file" id='fileUpload' name='fileUpload'/>
             </label>
-            {showImage ? <img src={fileInput} alt='uploaded file' ></img>: <img src={require('../Images/placeholder-image-add.png')} alt='uploaded file' ></img>}
+            {showImage ? <img src={fileInput} alt='uploaded file' ></img>:""}
+            {!showImage && width <=500 ? <img src={require('../Images/placeholder-image-mobile.png')} alt='uploaded file' ></img>:""}
+            {!showImage && width >500  ? <img src={require('../Images/placeholder-image-add.png')} alt='uploaded file' ></img>:""}
           </div>
           <div className='handle-file-upload'>
             <button type='button' onClick={()=>{setFileUploaded(true)}} >UPLOAD IMAGE</button>
             <div onClick={()=>{setShowImage(false)}} className='x-icon-bg'>
-             <span>X</span>
+            <img className='x-icon' src={require('../Images/react-icon-x.png')} alt='x-icon'></img>
             </div>
           </div>
         </div>

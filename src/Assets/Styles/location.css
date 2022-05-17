@@ -23,24 +23,62 @@
 
 .location-add .image-show {
     min-height: 280px;
-    max-width: 860px;
+    max-width: 75%;
     background-position: center;
     margin: 0 auto;
 }
+@media screen and (min-width: 500px) {
+    .location-add .form .input-container .custom-file-upload {
+        position: absolute;
+        min-width: 75%;
+        min-height: 280px;
+        cursor: pointer;
+        background: none;
+    }
 
-.location-add .form .input-container .custom-file-upload {
-    position: absolute;
-    width: 100%;
-    min-height: 280px;
-    cursor: pointer;
-    background: none;
+    .edit-location-container .input-container .custom-file-upload {
+        position: absolute;
+        min-width: 60%;
+        min-height: 280px;
+        cursor: pointer;
+        background: none;
+    }
+
+    .edit-location-container .input-container {
+        max-height: 280px;
+        min-height: 280px;
+    }
+    .edit-location-container .input-container img {
+        max-height: 280px;
+        width: auto;
+        margin: 0 auto;
+    }
+
+    .location-add .image-show .handle-file-upload{
+        display: flex;
+        min-width: 40%;
+        margin-left: 60%;
+        margin-top: 5%;
+        margin-bottom: 5%;
+        justify-content: flex-end;
+    }
+
 }
+
 .location-add .form .input-container {
     min-height: 280px;
     display: flex;
 }
 
-.location-add .form input[type="file"] {
+.edit-location-container .input-container {
+    display: flex;
+    justify-content: center;
+}
+
+
+
+.location-add .form input[type="file"],
+.edit-location-container input[type="file"] {
     display: none;
 }
 
@@ -50,24 +88,19 @@
     min-width: 100%;
 }
 
-.location-add .image-show .handle-file-upload{
-    display: flex;
-    min-width: 40%;
-    margin-left: 60%;
-    margin-top: 5%;
-    margin-bottom: 5%;
-    justify-content: flex-end;
-}
+
+
 
 .location-add .image-show .handle-file-upload .x-icon-bg {
     background-color: #9B6161;
-    max-width: 7%;
-    padding: 8px 13px 8px 13px;
+    width: 40px;
+    height: 40px;
     display: flex;
     justify-content: center;
     color: #fff;
     font-family: 'Kanit', sans-serif;
     font-weight: 500;
+    border-radius: 4px;
     cursor: pointer;
 }
 
@@ -105,9 +138,6 @@
 }
 .edit-location-container h4 span {
     color: #619B8A;
-}
-.edit-location-container img {
-    width: 100%;
 }
 
 .edit-location-container p {
@@ -178,7 +208,7 @@
 .location-add .leaflet-map {
     min-width: 60%;
     height: 400px;
-    max-width: 860px;
+    max-width: 75%;
     background-position: center;
     margin: 0 auto;
 }
@@ -200,7 +230,7 @@ html {
     display: flex;
     justify-content: space-between;
     flex-direction: column;
-    max-width: 860px;
+    max-width: 75%;
     margin: 0 auto;
 }
 
@@ -247,4 +277,82 @@ html {
     line-height: 19px;
     color: #000000;
     opacity: 0.7;
+}
+
+@media screen and (max-width: 500px) {
+ .location-add .custom-file-upload{
+    position: absolute;
+    width: 85%;
+    min-height: 280px;
+    cursor: pointer;
+    background: none;
+ }
+
+ .location-add {
+    min-width: 85%;
+ }
+
+ .location-add .handle-file-upload {
+    display: flex;
+    min-width: 100%;
+    margin-left: 0;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    justify-content: space-between;
+ }
+
+ .location-add .handle-file-upload button {
+     min-width: 75%;
+ }
+
+ .location-add .image-show {
+     max-width: 95%;
+ }
+
+ .location-add .leaflet-map {
+     max-width: 95%;
+ }
+
+ .location-add .submit {
+     max-width: 95%;
+     margin-bottom: 10%;
+ }
+
+ .location-add .submit label {
+     margin-top: 5%;
+     margin-bottom: 2%;
+ }
+
+ .location-add .submit button {
+     min-width: 100%;
+ }
+
+ .edit-location-container .input-container .custom-file-upload {
+    position: absolute;
+    min-width: 90%;
+    min-height: 280px;
+    cursor: pointer;
+ }
+
+ .edit-location-container {
+     margin: 5%;
+ }
+
+ .edit-location-container .submit-container {
+     flex-direction: column;
+ }
+
+ .edit-location-container p {
+     margin-top:  10%;
+     margin-bottom: 10%;
+ }
+
+ .edit-location-container .submit-container button {
+     margin-bottom: 10%;
+ }
+
+ .edit-location-container .image-show img {
+     max-width: 100%;
+     min-height: 280px;
+ }
 }

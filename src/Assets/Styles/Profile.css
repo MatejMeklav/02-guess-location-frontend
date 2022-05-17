@@ -3,14 +3,15 @@
     min-height: 175px;   
     border-radius: 4px 0px 0px 4px;
     background-size: 100% 100%;
-    margin-bottom: 1%;
+    margin-bottom: 2%;
     min-width: 310px;
 
     position: relative;
 }
 
-.profile-page .my-uploads-list .upload-item img {
-    max-width: 310px;
+.profile-page .my-uploads-list .upload-item .location-image {
+    min-width: 100%;
+    max-height: 174px;
 }
 
 .profile-page .my-uploads-list .upload-item .pen-icon {
