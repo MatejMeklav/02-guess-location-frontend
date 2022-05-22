@@ -1,9 +1,8 @@
-import React from 'react'
-import FooterDesktop from '../../Layouts/Footer/FooterDesktop'
-import FooterMobile from '../../Layouts/Footer/FooterMobile'
-import EditLocation from '../../Layouts/Location/EditLocation'
-import DesktopNavLoggedIn from '../../Layouts/Navigation/DesktopNavLoggedIn'
-import MobileNavLoggedIn from '../../Layouts/Navigation/MobileNavLoggedIn'
+import FooterDesktop from "../../Layouts/Footer/FooterDesktop";
+import FooterMobile from "../../Layouts/Footer/FooterMobile";
+import EditLocation from "../../Layouts/Location/EditLocation";
+import DesktopNavLoggedIn from "../../Layouts/Navigation/DesktopNavLoggedIn";
+import MobileNavLoggedIn from "../../Layouts/Navigation/MobileNavLoggedIn";
 
 export default function LocationEdit() {
   return (
@@ -14,5 +13,5 @@ export default function LocationEdit() {
       <FooterDesktop></FooterDesktop>
       <FooterMobile></FooterMobile>
     </>
-  )
+  );
 }

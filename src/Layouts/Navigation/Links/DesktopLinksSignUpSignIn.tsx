@@ -1,7 +1,5 @@
-import React from 'react'
+import React from "react";
 
 export default function DesktopLinksSignUpSignIn() {
-  return (
-    <div>DesktopLinksSignUpSignIn</div>
-  )
+  return <div>DesktopLinksSignUpSignIn</div>;
 }

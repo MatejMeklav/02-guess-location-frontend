@@ -1,9 +1,8 @@
-import React from 'react'
-import FooterDesktop from '../../Layouts/Footer/FooterDesktop'
-import FooterMobile from '../../Layouts/Footer/FooterMobile'
-import DesktopNavLoggedIn from '../../Layouts/Navigation/DesktopNavLoggedIn'
-import MobileNavLoggedIn from '../../Layouts/Navigation/MobileNavLoggedIn'
-import ProfileLayout from '../../Layouts/Profile/ProfileLayout'
+import FooterDesktop from "../../Layouts/Footer/FooterDesktop";
+import FooterMobile from "../../Layouts/Footer/FooterMobile";
+import DesktopNavLoggedIn from "../../Layouts/Navigation/DesktopNavLoggedIn";
+import MobileNavLoggedIn from "../../Layouts/Navigation/MobileNavLoggedIn";
+import ProfileLayout from "../../Layouts/Profile/ProfileLayout";
 
 export default function Profile() {
   return (
@@ -14,5 +13,5 @@ export default function Profile() {
       <FooterMobile></FooterMobile>
       <FooterDesktop></FooterDesktop>
     </>
-  )
+  );
 }

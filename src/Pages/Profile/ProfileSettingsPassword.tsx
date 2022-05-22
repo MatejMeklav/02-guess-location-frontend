@@ -1,87 +1,157 @@
-import jwtDecode from 'jwt-decode';
-import React, { useEffect, useState } from 'react'
-import { useNavigate } from 'react-router';
-import axios from 'axios';
-import { url } from '../../Config/variables';
-import { Link } from 'react-router-dom';
-import ConfirmedModal from '../../Layouts/ProfileSettings/ConfirmedModal';
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router";
+import axios from "axios";
+import { Link } from "react-router-dom";
+import ConfirmedModal from "../../Layouts/ProfileSettings/ConfirmedModal";
+import { LoginStatus } from "../../Config/LoginStatus";
 
 export default function ProfileSettingsPassword() {
-
   const navigate = useNavigate();
   const [successfulResponse, setSuccessfulResponse] = useState(false);
   const [responseError, setResponseError] = useState("");
+  const userId = LoginStatus();
+  const [curPassField, setCurPassField] = useState("password");
+  const [newPassField, setNewPassField] = useState("password");
+  const [confirmNewPassField, setConfirmNewPassField] = useState("password");
   useEffect(() => {
-    const key = localStorage.getItem('key');
-    if (key) {
-      const dateNow = new Date();
-      const decoded: any = jwtDecode(key);
-      if (decoded.exp * 1000 < dateNow.getTime()) {
-        navigate('/404');
-      }
-    } else {
-      navigate('/404');
+    if (userId === "false") {
+      navigate("/");
     }
-  }, [successfulResponse])
+  }, [successfulResponse, userId, curPassField]);
 
-  const handleSubmit = (event: { preventDefault: () => void; }) => {
-    let oldPassword = (document.getElementById("curentPassword") as HTMLInputElement).value;
-    let newPassword = (document.getElementById("newPassword") as HTMLInputElement).value;
-    let confirmNewPassword = (document.getElementById("confirmNewPassword") as HTMLInputElement).value;
-    console.log(document.forms[0]);
+  const handleSubmit = (event: { preventDefault: () => void }) => {
+    let oldPassword = (
+      document.getElementById("curentPassword") as HTMLInputElement
+    ).value;
+    let newPassword = (
+      document.getElementById("newPassword") as HTMLInputElement
+    ).value;
+    let confirmNewPassword = (
+      document.getElementById("confirmNewPassword") as HTMLInputElement
+    ).value;
     const headers = {
-      'Authorization': 'Bearer '+ localStorage.getItem('key'),
+      Authorization: "Bearer " + localStorage.getItem("key"),
     };
     axios
-      .put(url + 'me/update-user-password', {
-
-        oldPassword: oldPassword,
-        password: newPassword,
-        repeatedPassword: confirmNewPassword,
-      },{headers})
-      .then(response => {
-        console.log(response);
+      .put(
+        process.env.REACT_APP_BACKEND_SERVER_URL + "me/update-user-password",
+        {
+          oldPassword: oldPassword,
+          password: newPassword,
+          repeatedPassword: confirmNewPassword,
+        },
+        { headers }
+      )
+      .then((response) => {
         setSuccessfulResponse(true);
       })
-      .catch(error => {
+      .catch((error) => {
         setResponseError("Invalid input!");
-
       });
     event.preventDefault();
-  }
-  
+  };
+
+  const currentPassword = () => {
+    if (curPassField === "password") {
+      setCurPassField("text");
+    } else {
+      setCurPassField("password");
+    }
+  };
+  const newPassword = () => {
+    if (newPassField === "password") {
+      setNewPassField("text");
+    } else {
+      setNewPassField("password");
+    }
+  };
+
+  const confirmNewPassword = () => {
+    if (confirmNewPassField === "password") {
+      setConfirmNewPassField("text");
+    } else {
+      setConfirmNewPassField("password");
+    }
+  };
+
   return (
-    <div className='profile-settings'>
-      {successfulResponse ? <ConfirmedModal></ConfirmedModal>: ""}
-      <div className='information'>
-        <h4>Profile <span>settings.</span></h4>
+    <div className="profile-settings">
+      {successfulResponse ? <ConfirmedModal></ConfirmedModal> : ""}
+      <div className="information">
+        <h4>
+          Profile <span>settings.</span>
+        </h4>
         <p>Change your password.</p>
-        {responseError ? <p>{responseError}</p>: ""}
+        {responseError ? <p>{responseError}</p> : ""}
       </div>
       <div className="form">
         <form onSubmit={handleSubmit}>
-        <div className="input-container">
-          <label><span>Curent password</span></label>
-          <input className="settings-form-input" id="curentPassword" type="text" name="curentPassword" />
-          {successfulResponse ? "": <img src={require('../../Layouts/Images/visibleEye.png')} alt='eye' ></img>}
-          
-        </div>
           <div className="input-container">
-          <label><span>New password</span></label>
-          <input className="settings-form-input" id="newPassword" type="text" name="newPassword" />
-          {successfulResponse ? "": <img src={require('../../Layouts/Images/visibleEye.png')} alt='eye' ></img>}
-        </div>
-        <div className="input-container">
-          <label><span>Confirm new password</span></label>
-          <input className="settings-form-input" id="confirmNewPassword" type="text" name="confirmNewPassword" />
-          {successfulResponse ? "": <img src={require('../../Layouts/Images/visibleEye.png')} alt='eye' ></img>}
-        </div>
-        <div id='submit-password' className='submit'>
-          <button type='submit'>SUBMIT</button>
-          <Link to={'/settings'}>Cancel</Link>
-        </div>
+            <label>
+              <span>Curent password</span>
+            </label>
+            <input
+              className="settings-form-input"
+              id="curentPassword"
+              type={curPassField}
+              name="curentPassword"
+            />
+            {successfulResponse ? (
+              ""
+            ) : (
+              <img
+                onClick={() => currentPassword()}
+                src={require("../../Layouts/Images/visibleEye.png")}
+                alt="eye"
+              ></img>
+            )}
+          </div>
+          <div className="input-container">
+            <label>
+              <span>New password</span>
+            </label>
+            <input
+              className="settings-form-input"
+              id="newPassword"
+              type={newPassField}
+              name="newPassword"
+            />
+            {successfulResponse ? (
+              ""
+            ) : (
+              <img
+                onClick={() => newPassword()}
+                src={require("../../Layouts/Images/visibleEye.png")}
+                alt="eye"
+              ></img>
+            )}
+          </div>
+          <div className="input-container">
+            <label>
+              <span>Confirm new password</span>
+            </label>
+            <input
+              className="settings-form-input"
+              id="confirmNewPassword"
+              type={confirmNewPassField}
+              name="confirmNewPassword"
+            />
+            {successfulResponse ? (
+              ""
+            ) : (
+              <img
+                onClick={() => confirmNewPassword()}
+                src={require("../../Layouts/Images/visibleEye.png")}
+                alt="eye"
+              ></img>
+            )}
+          </div>
+          <div id="submit-password" className="submit">
+            <button type="submit">SUBMIT</button>
+            <Link to={"/settings"}>Cancel</Link>
+          </div>
         </form>
       </div>
     </div>
-  )
+  );
 }

@@ -219,6 +219,7 @@
 .leaflet-container {
     width: 100%;
     height: 100%;
+    border-radius: 4px;
 }
 
 html {
@@ -355,4 +356,254 @@ html {
      max-width: 100%;
      min-height: 280px;
  }
+}
+
+
+.location-container .leaflet-container {
+    min-height: 200px;
+    max-height: 400px;
+    border-radius: 4px;
+}
+
+.location-container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.location-container .leaderboard-div {
+    min-width: 420px;
+    max-width: 30%;
+    margin: 5% 5% 2% 1%;
+}
+
+.location-container .location-left {
+    min-width: 62%;
+    margin: 5% 1% 2% 5%;
+}
+
+.location-container .location-left img {
+    width: 100%;
+    height: 324px;
+    border-radius: 4px;
+    margin-bottom: 3%;
+}
+
+.location-container .location-left h4,
+.location-container .leaderboard-div h4 {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 34px;
+    line-height: 40px;
+    letter-spacing: 0.25px; 
+    color: #233D4D;
+    margin: 0 0 1% 0;
+}
+
+.location-container .location-left h4 span {
+    color: #619B8A;
+}
+
+.location-container .guessed-data-div {
+    display: flex;
+    flex-direction: column;
+}
+
+.location-container .guessed-data-div .upper-part {
+    display: flex;
+    justify-content: space-between;
+}
+
+.location-container .guessed-data-div .upper-part .error-distance {
+    min-width: 30%;
+}
+.location-container .guessed-data-div .upper-part .guessed-location {
+    min-width: 65%;
+}
+
+.location-container .guessed-data-div p {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: #000000; 
+}
+
+.location-container .guessed-data-div .display {
+    min-width: 100%;
+    border-color: #E5E5E5;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 4px;
+    min-height: 35px;
+    padding-top: 15px;
+}
+
+.location-container .guessed-data-div .submit-div {
+    max-width: 15%;
+    min-height: 39px;
+    margin-left:85%;
+}
+.location-container .guessed-data-div .submit-div button {
+    width: 100%;
+    min-height: 39px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: #FFFFFF;
+    background: #619B8A;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+}
+
+.location-container .leaderboard-div .leaderboard-list {
+    min-height: 94%;
+    margin-top: 5%;
+}
+
+.location-container .leaderboard-div .leaderboard-list .upload-item {
+    max-height: 48px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.location-container .leaderboard-div .leaderboard-list .upload-item .user-data {
+    display: flex;
+    max-width: 80%;
+    justify-content: space-between;
+}
+.location-container .user-name-date {
+    margin-top: 5px;
+    margin-left: 16px;
+}
+.location-container .user-name-date .name-p {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    color: #233D4D;
+}
+
+.location-container .user-name-date .date-time-p {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    text-align: center;
+    letter-spacing: 0.4px;
+    color: #233D4D;
+    text-align: left;
+}
+
+.location-container .leaderboard-div .meters-display {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    color: #619B8A;
+    margin-right: 5px;
+}
+.location-container .leaderboard-div .leaderboard-list .upload-item .user-name-date {
+    display: flex;
+    flex-direction: column;
+    max-height: 100%;
+
+}
+
+.location-container .leaderboard-div .leaderboard-list .upload-item .user-name-date p {
+    margin: 3px 0 0 0;
+}
+
+.upload-item .item-1,
+.upload-item .item-2,
+.upload-item .item-3,
+.upload-item .item-more {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    color: #FFFFFF;
+    padding-top: 6px;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+.upload-item .item-1 {
+    width: 27px;
+    height: 21px;
+    background: linear-gradient(41.75deg, #FE7F2D 22.78%, #FCCA46 87.18%);
+    border-radius: 30px;
+    text-align: center;
+}
+
+.upload-item .item-2 {
+    width: 27px;
+    height: 21px;  
+    background: linear-gradient(41.75deg, #D8D8D8 22.78%, #999999 87.18%);
+    border-radius: 30px;
+    text-align: center;
+}
+
+.upload-item .item-3 {
+    width: 27px;
+    height: 21px;
+    background: linear-gradient(41.75deg, #956956 22.78%, #D79376 87.18%);
+    border-radius: 30px;
+    text-align: center;
+}
+
+.upload-item .item-more {
+    width: 27px;
+    height: 21px;
+    background: #233D4D;
+    border-radius: 30px;
+    text-align: center;
+}
+.location-container .leaderboard-div .leaderboard-list .upload-item img {
+    width: 40px;
+    height: 40px;
+    border-radius: 64px;
+}
+
+.upload-item img {
+    margin-top: 5px;
+    margin-left: 16px;
+}
+
+
+@media screen and (max-width: 500px) { 
+    .location-container {
+        flex-direction: column;
+        margin: 0
+    }
+
+    .location-container .location-left {
+        margin: 35px;
+    }
+
+    .location-container .location-left img {
+        max-height: 181px;
+    }
+
+    .location-container .leaderboard-div {
+        margin: 35px;
+        min-width: 350px;
+    }
+    .location-container .guessed-data-div .submit-div {
+        margin-left: 65%;
+        min-width: 35%;
+    }
+
+    .location-container .guessed-data-div .upper-part {
+        flex-direction: column;
+    }
 }
